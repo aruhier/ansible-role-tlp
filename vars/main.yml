@@ -4,6 +4,6 @@ tlp_packages:
   - tlp
 tlp_services:
   - tlp
-  - tlp-sleep
+tlp_triggered_services: []
 
 # vim: set ts=2 sw=2:
