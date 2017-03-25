@@ -153,7 +153,7 @@ tlp_charge_thresh:
 The variables naming logic is to define a dict when the option relies on a
 state (for example `CPU_BOOST_ON_AC` and `CPU_BOOST_ON_BAT`).
 
-All empty variables listed before are just here for the documentation. There
+All empty variables listed before are just here for the documentation. They
 are not defined in `defaults/main.yml`.
 
 It is possible that a new option brought by a new TLP release would be missing
