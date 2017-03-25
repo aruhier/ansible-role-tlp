@@ -1,0 +1,10 @@
+---
+
+- name: restart tlp
+  become: yes
+  service:
+    name: "{{ item }}"
+    state: restarted
+  with_items: "{{ tlp_services }}"
+
+# vim: set ts=2 sw=2:

@@ -1,0 +1,85 @@
+---
+
+tlp_enable: true
+
+tlp_default_mode: "AC"
+
+tlp_disk_idle_secs:
+  ac: 0
+  bat: 2
+
+tlp_max_lost_work_secs:
+  ac: 15
+  bat: 60
+
+tlp_cpu_scaling_governor:
+  ac: "powersave"
+  bat: "powersave"
+
+tlp_sched_powersave:
+  ac: 0
+  bat: 1
+
+tlp_nmi_watchdog: 0
+
+tlp_energy_perf_policy:
+  ac: "performance"
+  bat: "powersave"
+
+tlp_disk_devices: "sda sdb"
+
+tlp_disk_apm_level:
+  ac: "254 254"
+  bat: "128 128"
+
+tlp_sata_linkpwr:
+  ac: "max_performance"
+  bat: "min_power"
+
+tlp_ahci_runtime_pm_timeout: 15
+
+tlp_pcie_aspm:
+  ac: "performance"
+  bat: "powersave"
+
+tlp_radeon_power_profile:
+  ac: "high"
+  bat: "low"
+
+tlp_radeon_dpm_state:
+  ac: "performance"
+  bat: "battery"
+
+tlp_radeon_dpm_perf_level:
+  ac: "auto"
+  bat: "auto"
+
+tlp_wifi_pwr:
+  ac: "off"
+  bat: "on"
+
+tlp_wol_disable: "Y"
+
+tlp_sound_power_save:
+  ac: 0
+  bat: 1
+tlp_sound_power_save_controller: "Y"
+
+tlp_bay_poweroff:
+  bat: 0
+tlp_bay_device: "sr0"
+
+tlp_runtime_pm:
+  ac: "on"
+  bat: "auto"
+tlp_runtime_pm_all: 1
+tlp_runtime_pm_blacklist:
+tlp_runtime_pm_driver_blacklist: "radeon nouveau"
+
+tlp_usb_autosuspend: 1
+tlp_usb_blacklist_wwan: 1
+
+tlp_restore_device_state:
+  startup: 0
+
+# vim: set ts=2 sw=2:

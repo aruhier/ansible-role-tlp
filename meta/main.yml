@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: Anthony Ruhier
+  description: Installs TLP
+  company:
+  license: BSD
+  min_ansible_version: 1.9
+  github_branch: master
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+        - xenial
+    - name: Archlinux
+  galaxy_tags:
+    - system
+dependencies: []

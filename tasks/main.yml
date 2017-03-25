@@ -1,0 +1,43 @@
+---
+
+- name: Include distribution specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - files:
+      - "vars/{{ ansible_distribution }}.yml"
+      skip: true
+
+- name: Include release specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - files:
+      - "vars/{{ ansible_distribution_release }}.yml"
+      skip: true
+
+- name: copy tlp configuration
+  become: yes
+  template:
+    src: "tlp.j2"
+    dest: "/etc/default/tlp"
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart tlp
+
+- name: Ensure that tlp services are started and enabled on boot
+  become: yes
+  service:
+    name: "{{ item }}"
+    state: started
+    enabled: yes
+  with_items: "{{ tlp_services }}"
+
+- name: Ensure that tlp triggered services are enabled on boot
+  become: yes
+  service:
+    name: "{{ item }}"
+    enabled: yes
+  with_items: "{{ tlp_triggered_services }}"
+
+# vim: set ts=2 sw=2:

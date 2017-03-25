@@ -1,0 +1,8 @@
+---
+
+tlp_packages:
+  - tlp
+tlp_services:
+  - tlp
+
+# vim: set ts=2 sw=2:

@@ -1,0 +1,356 @@
+# {{ ansible_managed }}
+#
+# -----------------------------------------------------------------------------
+# tlp - Parameters for power save
+# See full explanation: http://linrunner.de/en/tlp/docs/tlp-configuration.html
+
+
+{% if tlp_enable is defined %}
+    TLP_ENABLE={{ tlp_enable }}
+{% endif %}
+{% if tlp_default_mode is defined %}
+    TLP_DEFAULT_MODE={{ tlp_default_mode }}
+{% endif %}
+
+{% if tlp_disk_idle_secs is defined %}
+{% if tlp_disk_idle_secs.ac is defined %}
+    DISK_IDLE_SECS_ON_AC={{ tlp_disk_idle_secs.ac }}
+{% endif %}
+{% if tlp_disk_idle_secs.bat is defined %}
+    DISK_IDLE_SECS_ON_BAT={{ tlp_disk_idle_secs.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_max_lost_work_secs is defined %}
+{% if tlp_max_lost_work_secs.ac is defined %}
+    MAX_LOST_WORK_SECS_ON_AC={{ tlp_disk_max_lost_work_secs.ac }}
+{% endif %}
+{% if tlp_max_lost_work_secs.bat is defined %}
+    MAX_LOST_WORK_SECS_ON_BAT={{ tlp_disk_max_lost_work_secs.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_cpu_scaling_governor is defined %}
+{% if tlp_cpu_scaling_governor.ac is defined %}
+    CPU_SCALING_GOVERNOR_ON_AC={{ tlp_cpu_scaling_governor.ac }}
+{% endif %}
+{% if tlp_cpu_scaling_governor.bat is defined %}
+    CPU_SCALING_GOVERNOR_ON_BAT={{ tlp_cpu_scaling_governor.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_cpu_scaling_max_freq is defined %}
+{% if tlp_cpu_scaling_max_freq.ac is defined %}
+    CPU_SCALING_MAX_FREQ_ON_AC={{ tlp_cpu_scaling_max_freq.ac }}
+{% endif %}
+{% if tlp_cpu_scaling_max_freq.bat is defined %}
+    CPU_SCALING_MAX_FREQ_ON_BAT={{ tlp_cpu_scaling_max_freq.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_cpu_scaling_min_freq is defined %}
+{% if tlp_cpu_scaling_min_freq.ac is defined %}
+    CPU_SCALING_MIN_FREQ_ON_AC={{ tlp_cpu_scaling_min_freq.ac }}
+{% endif %}
+{% if tlp_cpu_scaling_min_freq.bat is defined %}
+    CPU_SCALING_MIN_FREQ_ON_BAT={{ tlp_cpu_scaling_min_freq.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_cpu_min_perf is defined %}
+{% if tlp_cpu_min_perf.ac is defined %}
+    CPU_MIN_PERF_ON_AC={{ tlp_cpu_min_perf.ac }}
+{% endif %}
+{% if tlp_cpu_min_perf.bat is defined %}
+    CPU_MIN_PERF_ON_BAT={{ tlp_cpu_min_perf.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_cpu_max_perf is defined %}
+{% if tlp_cpu_max_perf.ac is defined %}
+    CPU_MAX_PERF_ON_AC={{ tlp_cpu_max_perf.ac }}
+{% endif %}
+{% if tlp_cpu_max_perf.bat is defined %}
+    CPU_MAX_PERF_ON_BAT={{ tlp_cpu_max_perf.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_cpu_boost is defined %}
+{% if tlp_cpu_boost.ac is defined %}
+    CPU_BOOST_ON_AC={{ tlp_cpu_boost.ac }}
+{% endif %}
+{% if tlp_cpu_boost.bat is defined %}
+    CPU_BOOST_ON_BAT={{ tlp_cpu_boost.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_cpu_sched_powersave is defined %}
+{% if tlp_cpu_sched_powersave.ac is defined %}
+    CPU_SCHED_POWERSAVE_ON_AC={{ tlp_cpu_sched_powersave.ac }}
+{% endif %}
+{% if tlp_cpu_sched_powersave.bat is defined %}
+    CPU_SCHED_POWERSAVE_ON_BAT={{ tlp_cpu_sched_powersave.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_nmi_watchdog is defined %}
+    NMI_WATCHDOG={{ tlp_nmi_watchdog }}
+{% endif %}
+
+{% if tlp_pgc_controls is defined %}
+    PGC_CONTROLS={{ tlp_pgc_controls }}
+{% endif %}
+
+{% if tlp_energy_perf_policy is defined %}
+{% if tlp_energy_perf_policy.ac is defined %}
+    ENERGY_PERF_POLICY_ON_AC={{ tlp_energy_perf_policy.ac }}
+{% endif %}
+{% if tlp_energy_perf_policy.bat is defined %}
+    ENERGY_PERF_POLICY_ON_BAT={{ tlp_energy_perf_policy.bat }}
+{% endif %}
+{% endif %}
+{% if tlp_sata_linkpwr is defined %}
+{% if tlp_sata_linkpwr.ac is defined %}
+    SATA_LINKPWR_ON_AC={{ tlp_sata_linkpwr.ac }}
+{% endif %}
+{% if tlp_sata_linkpwr.bat is defined %}
+    SATA_LINKPWR_ON_BAT={{ tlp_sata_linkpwr.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_disk_devices is defined %}
+    DISK_DEVICES={{ tlp_disk_devices }}
+{% endif %}
+
+{% if tlp_disk_apm_level is defined %}
+{% if tlp_disk_apm_level.ac is defined %}
+    DISK_APM_LEVEL_ON_AC={{ tlp_disk_apm_level.ac }}
+{% endif %}
+{% if tlp_disk_apm_level.bat is defined %}
+    DISK_APM_LEVEL_ON_BAT={{ tlp_disk_apm_level.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_disk_spindown_timeout is defined %}
+{% if tlp_disk_spindown_timeout.ac is defined %}
+    DISK_SPINDOWN_TIMEOUT_ON_AC={{ tlp_disk_spindown_timeout.ac }}
+{% endif %}
+{% if tlp_disk_spindown_timeout.bat is defined %}
+    DISK_SPINDOWN_TIMEOUT_ON_BAT={{ tlp_disk_spindown_timeout.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_disk_iosched is defined %}
+    DISK_IOSCHED={{ tlp_disk_iosched }}
+{% endif %}
+
+{% if tlp_sata_linkpwr is defined %}
+{% if tlp_sata_linkpwr.ac is defined %}
+    SATA_LINKPWR_ON_AC={{ tlp_sata_linkpwr.ac }}
+{% endif %}
+{% if tlp_sata_linkpwr.bat is defined %}
+    SATA_LINKPWR_ON_BAT={{ tlp_sata_linkpwr.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_ahci_runtime_pm is defined %}
+{% if tlp_ahci_runtime_pm.ac is defined %}
+    AHCI_RUNTIME_PM_ON_AC={{ tlp_ahci_runtime_pm.ac }}
+{% endif %}
+{% if tlp_ahci_runtime_pm.bat is defined %}
+    AHCI_RUNTIME_PM_ON_BAT={{ tlp_ahci_runtime_pm.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_ahci_runtime_pm_timeout is defined %}
+    AHCI_RUNTIME_PM_TIMEOUT={{ tlp_ahci_runtime_pm_timeout }}
+{% endif %}
+
+{% if tlp_pci_aspm is defined %}
+{% if tlp_pci_aspm.ac is defined %}
+    PCI_ASPM_ON_AC={{ tlp_pci_aspm.ac }}
+{% endif %}
+{% if tlp_pci_aspm.bat is defined %}
+    PCI_ASPM_ON_BAT={{ tlp_pci_aspm.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_radeon_power_profile is defined %}
+{% if tlp_radeon_power_profile.ac is defined %}
+    RADEON_POWER_PROFILE_ON_AC={{ tlp_radeon_power_profile.ac }}
+{% endif %}
+{% if tlp_radeon_power_profile.bat is defined %}
+    RADEON_POWER_PROFILE_ON_BAT={{ tlp_radeon_power_profile.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_radeon_dpm_state is defined %}
+{% if tlp_radeon_dpm_state.ac is defined %}
+    RADEON_DPM_STATE_ON_AC={{ tlp_radeon_dpm_state.ac }}
+{% endif %}
+{% if tlp_radeon_dpm_state.bat is defined %}
+    RADEON_DPM_STATE_ON_BAT={{ tlp_radeon_dpm_state.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_radeon_dpm_perf_level is defined %}
+{% if tlp_radeon_dpm_perf_level.ac is defined %}
+    RADEON_DPM_PERF_LEVEL_ON_AC={{ tlp_radeon_dpm_perf_level.ac }}
+{% endif %}
+{% if tlp_radeon_dpm_perf_level.bat is defined %}
+    RADEON_DPM_PERF_LEVEL_ON_BAT={{ tlp_radeon_dpm_perf_level.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_wifi_pwr is defined %}
+{% if tlp_wifi_pwr.ac is defined %}
+    WIFI_PWR_ON_AC={{ tlp_wifi_pwr.ac }}
+{% endif %}
+{% if tlp_wifi_pwr.bat is defined %}
+    WIFI_PWR_ON_BAT={{ tlp_wifi_pwr.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_wol_disable is defined %}
+    WOL_DISABLE={{ tlp_wol_disable }}
+{% endif %}
+
+{% if tlp_sound_power_save is defined %}
+{% if tlp_sound_power_save.ac is defined %}
+    SOUND_POWER_SAVE_ON_AC={{ tlp_sound_power_save.ac }}
+{% endif %}
+{% if tlp_sound_power_save.bat is defined %}
+    SOUND_POWER_SAVE_ON_BAT={{ tlp_sound_power_save.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_sound_power_save_controller is defined %}
+    SOUND_POWER_SAVE_CONTROLLER={{ tlp_sound_power_save_controller }}
+{% endif %}
+
+{% if tlp_bay_poweroff and tlp_bay_poweroff.bat is defined %}
+    BAY_POWEROFF_ON_BAT={{ tlp_bay_poweroff.bat }}
+{% endif %}
+
+{% if tlp_bay_device is defined %}
+    BAY_DEVICE={{ tlp_bay_device }}
+{% endif %}
+
+{% if tlp_runtime_pm is defined %}
+{% if tlp_runtime_pm.ac is defined %}
+    RUNTIME_PM_ON_AC={{ tlp_runtime_pm.ac }}
+{% endif %}
+{% if tlp_runtime_pm.bat is defined %}
+    RUNTIME_PM_ON_BAT={{ tlp_runtime_pm.bat }}
+{% endif %}
+{% endif %}
+
+{% if tlp_runtime_pm_all is defined %}
+    RUNTIME_PM_ALL={{ tlp_runtime_pm_all }}
+{% endif %}
+
+{% if tlp_runtime_pm_blacklist is defined %}
+    RUNTIME_PM_BLACKLIST={{ tlp_runtime_pm_blacklist }}
+{% endif %}
+
+{% if tlp_runtime_pm_driver_blacklist is defined %}
+    RUNTIME_PM_DRIVER_BLACKLIST={{ tlp_runtime_pm_driver_blacklist }}
+{% endif %}
+
+{% if tlp_usb_autosuspend is defined %}
+    USB_AUTOSUSPEND={{ tlp_usb_autosuspend }}
+{% endif %}
+
+{% if tlp_usb_blacklist is defined %}
+    USB_BLACKLIST={{ tlp_usb_blacklist }}
+{% endif %}
+
+{% if tlp_usb_whitelist is defined %}
+    USB_WHITELIST={{ tlp_usb_whitelist }}
+{% endif %}
+
+{% if tlp_usb_blacklist_wwan is defined %}
+    USB_BLACKLIST_WWAN={{ tlp_usb_blacklist_wwan }}
+{% endif %}
+
+{% if tlp_usb_autosuspend_disable and tlp_usb_autosuspend_disable.shutdown is defined %}
+    USB_AUTOSUSPEND_DISABLE_ON_SHUTDOWN={{ tlp_usb_autosuspend_disable.shutdown }}
+{% endif %}
+{% endif %}
+
+{% if tlp_restore_device_state and tlp_restore_device_state.startup is defined %}
+    RESTORE_DEVICE_STATE_ON_STARTUP={{ restore_device_state.startup }}
+{% endif %}
+{% endif %}
+
+{% if tlp_devices_to_disable is defined %}
+{% if tlp_devices_to_disable.startup is defined %}
+    DEVICES_TO_DISABLE_ON_STARTUP={{ tlp_devices_to_disable.startup }}
+{% endif %}
+{% if tlp_devices_to_disable.shutdown is defined %}
+    DEVICES_TO_DISABLE_ON_SHUTDOWN={{ tlp_devices_to_disable.shutdown }}
+{% endif %}
+{% if tlp_devices_to_disable.bat is defined %}
+    DEVICES_TO_DISABLE_ON_BAT={{ tlp_devices_to_disable.bat }}
+{% endif %}
+{% if tlp_devices_to_disable.bat_not_in_use is defined %}
+    DEVICES_TO_DISABLE_ON_BAT_NOT_IN_USE={{ tlp_devices_to_disable.bat_not_in_use }}
+{% endif %}
+{% if tlp_devices_to_disable.lan_connect is defined %}
+    DEVICES_TO_DISABLE_ON_LAN_CONNECT={{ tlp_devices_to_disable.lan_connect }}
+{% endif %}
+{% if tlp_devices_to_disable.wifi_connect is defined %}
+    DEVICES_TO_DISABLE_ON_WIFI_CONNECT={{ tlp_devices_to_disable.wifi_connect }}
+{% endif %}
+{% if tlp_devices_to_disable.wwan_connect is defined %}
+    DEVICES_TO_DISABLE_ON_WWAN_CONNECT={{ tlp_devices_to_disable.wwan_connect }}
+{% endif %}
+{% if tlp_devices_to_disable.dock is defined %}
+    DEVICES_TO_DISABLE_ON_DOCK={{ tlp_devices_to_disable.dock }}
+{% endif %}
+{% if tlp_devices_to_disable.undock is defined %}
+    DEVICES_TO_DISABLE_ON_UNDOCK={{ tlp_devices_to_disable.undock }}
+{% endif %}
+{% endif %}
+
+{% if tlp_devices_to_enable is defined %}
+{% if tlp_devices_to_enable.startup is defined %}
+    DEVICES_TO_ENABLE_ON_STARTUP={{ tlp_devices_to_enable.startup }}
+{% endif %}
+{% if tlp_devices_to_enable.shutdown is defined %}
+    DEVICES_TO_ENABLE_ON_SHUTDOWN={{ tlp_devices_to_enable.shutdown }}
+{% endif %}
+{% if tlp_devices_to_enable.bat is defined %}
+    DEVICES_TO_ENABLE_ON_BAT={{ tlp_devices_to_enable.bat }}
+{% endif %}
+{% if tlp_devices_to_enable.bat_not_in_use is defined %}
+    DEVICES_TO_ENABLE_ON_BAT_NOT_IN_USE={{ tlp_devices_to_enable.bat_not_in_use }}
+{% endif %}
+{% if tlp_devices_to_enable.lan_connect is defined %}
+    DEVICES_TO_ENABLE_ON_LAN_CONNECT={{ tlp_devices_to_enable.lan_connect }}
+{% endif %}
+{% if tlp_devices_to_enable.wifi_connect is defined %}
+    DEVICES_TO_ENABLE_ON_WIFI_CONNECT={{ tlp_devices_to_enable.wifi_connect }}
+{% endif %}
+{% if tlp_devices_to_enable.wwan_connect is defined %}
+    DEVICES_TO_ENABLE_ON_WWAN_CONNECT={{ tlp_devices_to_enable.wwan_connect }}
+{% endif %}
+{% if tlp_devices_to_enable.dock is defined %}
+    DEVICES_TO_ENABLE_ON_DOCK={{ tlp_devices_to_enable.dock }}
+{% endif %}
+{% if tlp_devices_to_enable.undock is defined %}
+    DEVICES_TO_ENABLE_ON_UNDOCK={{ tlp_devices_to_enable.undock }}
+{% endif %}
+{% endif %}
+
+{% if tlp_charge_thresh is defined %}
+{% for bat, bat_thresh in tlp_charge_thresh.iteritems() %}
+{% if bat_thresh %}
+{% if bat_thresh.start is defined %}
+START_CHARGE_THRESH_{{ bat|upper}}={{ bat_thresh.start }}
+{% endif %}
+{% if bat_thresh.stop is defined %}
+STOP_CHARGE_THRESH_{{ bat|upper}}={{ bat_thresh.stop }}
+{% endif %}
+{% endfor %}
+{% endif %}
