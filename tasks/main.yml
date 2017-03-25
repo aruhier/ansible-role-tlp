@@ -14,6 +14,8 @@
       - "vars/{{ ansible_distribution_release }}.yml"
       skip: true
 
+- include: install.yml
+
 - name: copy tlp configuration
   become: yes
   template:
