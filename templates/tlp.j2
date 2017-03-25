@@ -5,8 +5,10 @@
 # See full explanation: http://linrunner.de/en/tlp/docs/tlp-configuration.html
 
 
-{% if tlp_enable is defined %}
-    TLP_ENABLE={{ tlp_enable }}
+{% if tlp_enable is defined and tlp_enable %}
+    TLP_ENABLE=1
+{% else %}
+    TLP_ENABLE=0
 {% endif %}
 {% if tlp_default_mode is defined %}
     TLP_DEFAULT_MODE={{ tlp_default_mode }}
@@ -23,10 +25,10 @@
 
 {% if tlp_max_lost_work_secs is defined %}
 {% if tlp_max_lost_work_secs.ac is defined %}
-    MAX_LOST_WORK_SECS_ON_AC={{ tlp_disk_max_lost_work_secs.ac }}
+    MAX_LOST_WORK_SECS_ON_AC={{ tlp_max_lost_work_secs.ac }}
 {% endif %}
 {% if tlp_max_lost_work_secs.bat is defined %}
-    MAX_LOST_WORK_SECS_ON_BAT={{ tlp_disk_max_lost_work_secs.bat }}
+    MAX_LOST_WORK_SECS_ON_BAT={{ tlp_max_lost_work_secs.bat }}
 {% endif %}
 {% endif %}
 
@@ -109,6 +111,7 @@
     ENERGY_PERF_POLICY_ON_BAT={{ tlp_energy_perf_policy.bat }}
 {% endif %}
 {% endif %}
+
 {% if tlp_sata_linkpwr is defined %}
 {% if tlp_sata_linkpwr.ac is defined %}
     SATA_LINKPWR_ON_AC={{ tlp_sata_linkpwr.ac }}
@@ -273,13 +276,15 @@
     USB_BLACKLIST_WWAN={{ tlp_usb_blacklist_wwan }}
 {% endif %}
 
+{% if tlp_usb_autosuspend_disable is defined %}
 {% if tlp_usb_autosuspend_disable and tlp_usb_autosuspend_disable.shutdown is defined %}
     USB_AUTOSUSPEND_DISABLE_ON_SHUTDOWN={{ tlp_usb_autosuspend_disable.shutdown }}
 {% endif %}
 {% endif %}
 
+{% if tlp_restore_device_state is defined %}
 {% if tlp_restore_device_state and tlp_restore_device_state.startup is defined %}
-    RESTORE_DEVICE_STATE_ON_STARTUP={{ restore_device_state.startup }}
+    RESTORE_DEVICE_STATE_ON_STARTUP={{ tlp_restore_device_state.startup }}
 {% endif %}
 {% endif %}
 
@@ -351,6 +356,7 @@ START_CHARGE_THRESH_{{ bat|upper}}={{ bat_thresh.start }}
 {% endif %}
 {% if bat_thresh.stop is defined %}
 STOP_CHARGE_THRESH_{{ bat|upper}}={{ bat_thresh.stop }}
+{% endif %}
 {% endif %}
 {% endfor %}
 {% endif %}
