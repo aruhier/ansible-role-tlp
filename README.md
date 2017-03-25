@@ -1,6 +1,8 @@
 Ansible Role: tlp
 =================
 
+[![Build Status](https://travis-ci.org/Anthony25/ansible-role-tlp.svg?branch=master)](https://travis-ci.org/Anthony25/ansible-role-tlp)
+
 Ansible role to install and configure tlp.
 
 Role Variables
