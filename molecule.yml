@@ -1,0 +1,18 @@
+---
+ansible:
+  playbook: tests/test.yml
+
+dependency:
+  name: galaxy
+
+driver:
+  name: docker
+
+docker:
+  containers:
+  - name: ansible-role-tlp-01
+    image: ubuntu
+    image_version: '16.04'
+
+  - name: ansible-role-tlp-02
+    image: archlinux
