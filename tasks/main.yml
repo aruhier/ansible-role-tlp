@@ -34,6 +34,7 @@
     state: started
     enabled: yes
   with_items: "{{ tlp_services }}"
+  when: tlp_enable
 
 - name: Ensure that tlp triggered services are enabled on boot
   become: yes
@@ -41,5 +42,6 @@
     name: "{{ item }}"
     enabled: yes
   with_items: "{{ tlp_triggered_services }}"
+  when: tlp_enable
 
 # vim: set ts=2 sw=2:

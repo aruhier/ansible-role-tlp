@@ -1,7 +1,9 @@
 ---
 ansible:
-  inventory_file: tests/inventory
   playbook: tests/test.yml
+  group_vars:
+    archlinux:
+      tlp_enable: False
 
 dependency:
   name: galaxy
