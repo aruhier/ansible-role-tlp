@@ -12,7 +12,6 @@
 - include: install.yml
 
 - name: copy tlp configuration
-  become: true
   template:
     src: "tlp.j2"
     dest: "/etc/default/tlp"
@@ -23,7 +22,6 @@
     - restart tlp
 
 - name: Ensure that tlp services are started and enabled on boot
-  become: true
   service:
     name: "{{ item }}"
     state: started
@@ -32,7 +30,6 @@
   when: tlp_enable
 
 - name: Ensure that tlp triggered services are enabled on boot
-  become: true
   service:
     name: "{{ item }}"
     enabled: true

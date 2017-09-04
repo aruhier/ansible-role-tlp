@@ -1,7 +1,6 @@
 ---
 
 - name: restart tlp
-  become: true
   service:
     name: "{{ item }}"
     state: restarted

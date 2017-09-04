@@ -4,11 +4,12 @@ dependency:
 driver:
   name: docker
 
-ansible:
-  playbook: playbook.yml
-  group_vars:
-    all:
-      tlp_enable: false
+provisioner:
+  name: ansible
+  inventory:
+    group_vars:
+      all:
+        tlp_enable: false
 
 platforms:
   - name: ansible-ubuntu-lts
@@ -24,7 +25,7 @@ platforms:
     privileged: true
   - name: ansible-fedora
     image: fedora
-    image_version: 26
+    image_version: latest
     command: /usr/lib/systemd/systemd
     privileged: true
 
