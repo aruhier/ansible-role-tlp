@@ -1,3 +1,0 @@
-[archlinux:vars]
-tlp_enable: false
-ansible_python_interpreter: /usr/bin/python2

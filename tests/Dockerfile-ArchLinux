@@ -1,3 +1,0 @@
-FROM finalduty/archlinux:latest
-
-RUN pacman -Syu --noconfirm && pacman --noconfirm -S python bash sudo python2

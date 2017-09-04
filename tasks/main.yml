@@ -4,20 +4,15 @@
   include_vars: "{{ item }}"
   with_first_found:
     - files:
-      - "vars/{{ ansible_distribution }}.yml"
-      skip: true
-
-- name: Include release specific variables
-  include_vars: "{{ item }}"
-  with_first_found:
-    - files:
-      - "vars/{{ ansible_distribution_release }}.yml"
+        - "vars/{{ ansible_distribution_release }}.yml"
+        - "vars/{{ ansible_distribution }}.yml"
+        - "vars/{{ ansible_os_family }}.yml"
       skip: true
 
 - include: install.yml
 
 - name: copy tlp configuration
-  become: yes
+  become: true
   template:
     src: "tlp.j2"
     dest: "/etc/default/tlp"
@@ -28,19 +23,19 @@
     - restart tlp
 
 - name: Ensure that tlp services are started and enabled on boot
-  become: yes
+  become: true
   service:
     name: "{{ item }}"
     state: started
-    enabled: yes
+    enabled: true
   with_items: "{{ tlp_services }}"
   when: tlp_enable
 
 - name: Ensure that tlp triggered services are enabled on boot
-  become: yes
+  become: true
   service:
     name: "{{ item }}"
-    enabled: yes
+    enabled: true
   with_items: "{{ tlp_triggered_services }}"
   when: tlp_enable
 
