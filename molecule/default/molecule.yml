@@ -19,13 +19,11 @@ platforms:
   - name: ansible-ubuntu-18-10
     image: ubuntu:18.10
   - name: ansible-arch
-    image: archimg/base
-    image_version: full
+    image: archlinux/base:latest
     command: /lib/systemd/systemd
     privileged: true
   - name: ansible-fedora
-    image: fedora
-    image_version: latest
+    image: fedora:latest
     command: /usr/lib/systemd/systemd
     privileged: true
 
