@@ -38,7 +38,7 @@ install:
   # Check Molecule version
   - molecule --version
 
-# Build the Docker images
+  # Build the Docker images
   - molecule --debug create
   - molecule --debug destroy
 
